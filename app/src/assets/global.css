@@ -1,18 +1,42 @@
+:root {
+	--color-primary: rgb(200, 0, 65);
+	--color-primary-shadow: rgba(150, 0, 45, 0.4);
+	--color-primary-text: rgb(255, 255, 255);
+	--color-secondary: rgb(255, 255, 255);
+	--color-secondary-text: rgb(0, 0, 0);
+	--color-text: rgb(136, 136, 136);
+	--color-background: rgb(0, 0, 0);
+}
+
 *, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 @font-face {
-  font-family: 'Beckett';
-  src: url('/src/assets/fonts/Beckett.ttf');
+	font-family: 'Beckett';
+	src: url('/src/assets/fonts/Beckett.ttf');
 }
 
 @font-face {
-  font-family: 'Pricedown';
-  src: url('/src/assets/fonts/Pricedown.otf');
-  font-variant-ligatures: none;
-  /* Disable standard & contextual ligatures */
-  font-feature-settings: "liga" 0, "clig" 0;
+	font-family: 'Pricedown';
+	src: url('/src/assets/fonts/Pricedown.otf');
+	/* Disables ligatures */
+	font-variant-ligatures: none;
+	font-feature-settings: "liga" 0, "clig" 0;
+}
+
+@font-face {
+	font-family: 'Aharoni';
+	src: url('/src/assets/fonts/Aharoni.ttf');
+}
+
+@font-face {
+	font-family: 'Bank Gothic';
+	src: url('/src/assets/fonts/BankGothic.ttf');
+}
+
+body {
+	font-family: sans-serif;
 }
