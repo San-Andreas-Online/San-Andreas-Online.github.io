@@ -1,3 +1,15 @@
+<script setup>
+import { ExternalLink, MousePointer2, Layers, Palette, Code2 } from 'lucide-vue-next'
+import editorScreenshot from '../assets/editor-screenshot.png'
+
+const toolFeatures = [
+  { icon: MousePointer2, text: 'Drag & drop element placement' },
+  { icon: Layers, text: 'Multi-layer element management' },
+  { icon: Palette, text: 'Live color & font preview' },
+  { icon: Code2, text: 'Export ready-to-paste PAWN code' },
+]
+</script>
+
 <template>
   <section style="padding: 7rem 1.5rem; background: #080808;">
     <div style="max-width: 72rem; margin: 0 auto;">
@@ -49,18 +61,6 @@
     </div>
   </section>
 </template>
-
-<script setup>
-import { ExternalLink, MousePointer2, Layers, Palette, Code2 } from 'lucide-vue-next'
-import editorScreenshot from '../assets/editor-screenshot.png'
-
-const toolFeatures = [
-  { icon: MousePointer2, text: 'Drag & drop element placement' },
-  { icon: Layers, text: 'Multi-layer element management' },
-  { icon: Palette, text: 'Live color & font preview' },
-  { icon: Code2, text: 'Export ready-to-paste PAWN code' },
-]
-</script>
 
 <style scoped>
 .section-label {

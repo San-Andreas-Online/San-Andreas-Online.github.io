@@ -1,3 +1,15 @@
+<script setup>
+
+const year = new Date().getFullYear()
+
+const serverInfo = [
+  { label: 'IP', value: 'play.saonline.gg' },
+  { label: 'PORT', value: '7777' },
+  { label: 'MODE', value: 'Roleplay / Freeroam' },
+  { label: 'VERSION', value: '0.3.7-R4' },
+]
+</script>
+
 <template>
   <section class="hero">
     <!-- Background effects -->
@@ -38,18 +50,6 @@
 
   </section>
 </template>
-
-<script setup>
-
-const year = new Date().getFullYear()
-
-const serverInfo = [
-  { label: 'IP', value: 'play.saonline.gg' },
-  { label: 'PORT', value: '7777' },
-  { label: 'MODE', value: 'Roleplay / Freeroam' },
-  { label: 'VERSION', value: '0.3.7-R4' },
-]
-</script>
 
 <style scoped>
 .hero {

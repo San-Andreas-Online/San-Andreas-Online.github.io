@@ -1,3 +1,14 @@
+<script setup>
+import { Github, ExternalLink } from 'lucide-vue-next'
+
+const year = new Date().getFullYear()
+
+const links = [
+  { icon: Github, label: 'GitHub', href: 'https://github.com/San-Andreas-Online' },
+  { icon: ExternalLink, label: 'TextDraw Editor', href: '#' },
+]
+</script>
+
 <template>
   <footer style="background: #080808; border-top: 1px solid rgba(255,255,255,0.05);">
     <div style="max-width: 72rem; margin: 0 auto; padding: 3rem 1.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1.5rem;">
@@ -29,17 +40,6 @@
     </div>
   </footer>
 </template>
-
-<script setup>
-import { Github, ExternalLink } from 'lucide-vue-next'
-
-const year = new Date().getFullYear()
-
-const links = [
-  { icon: Github, label: 'GitHub', href: 'https://github.com/San-Andreas-Online' },
-  { icon: ExternalLink, label: 'TextDraw Editor', href: '#' },
-]
-</script>
 
 <style scoped>
 .footer-link {

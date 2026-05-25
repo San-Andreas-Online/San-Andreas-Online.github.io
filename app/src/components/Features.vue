@@ -1,43 +1,3 @@
-<template>
-  <section style="padding: 3rem 1.5rem; background: #0a0a0a;">
-    <div style="max-width: 72rem; margin: 0 auto;">
-      <!-- Header -->
-      <div style="text-align: center; margin-bottom: 4rem;">
-        <p class="section-label">What we're building</p>
-        <h2 class="section-title">San Andreas. No limits.</h2>
-      </div>
-
-      <!-- Cards -->
-      <div class="cards-grid">
-        <div
-          v-for="v in vision"
-          :key="v.title"
-          class="feature-card"
-          @mouseenter="onEnter"
-          @mouseleave="onLeave"
-        >
-          <!-- Default: icon -->
-          <div class="card-icon-wrap">
-            <div class="card-icon-box">
-              <component :is="v.icon" :size="28" color="#C80041" />
-            </div>
-          </div>
-
-          <!-- Hover overlay -->
-          <div class="card-overlay">
-            <div class="card-overlay-icon">
-              <component :is="v.icon" :size="16" color="#C80041" />
-            </div>
-            <h3 style="white-space: pre-line", class="card-title">{{ v.title }}</h3>
-            
-            <p class="card-desc">{{ v.description }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-</template>
-
 <script setup>
 import { Globe, Zap, Radio } from 'lucide-vue-next'
 
@@ -79,6 +39,46 @@ function onLeave(e) {
   overlay.style.pointerEvents = 'none'
 }
 </script>
+
+<template>
+  <section style="padding: 3rem 1.5rem; background: #0a0a0a;">
+    <div style="max-width: 72rem; margin: 0 auto;">
+      <!-- Header -->
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <p class="section-label">What we're building</p>
+        <h2 class="section-title">San Andreas. No limits.</h2>
+      </div>
+
+      <!-- Cards -->
+      <div class="cards-grid">
+        <div
+          v-for="v in vision"
+          :key="v.title"
+          class="feature-card"
+          @mouseenter="onEnter"
+          @mouseleave="onLeave"
+        >
+          <!-- Default: icon -->
+          <div class="card-icon-wrap">
+            <div class="card-icon-box">
+              <component :is="v.icon" :size="28" color="#C80041" />
+            </div>
+          </div>
+
+          <!-- Hover overlay -->
+          <div class="card-overlay">
+            <div class="card-overlay-icon">
+              <component :is="v.icon" :size="16" color="#C80041" />
+            </div>
+            <h3 style="white-space: pre-line", class="card-title">{{ v.title }}</h3>
+            
+            <p class="card-desc">{{ v.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</template>
 
 <style scoped>
 .section-label {
