@@ -3,6 +3,7 @@ import Button from './Button.vue';
 import CodeIcon from './icons/CodeIcon.vue';
 import CursorIcon from './icons/CursorIcon.vue';
 import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
+import GitHubIcon from './icons/GitHubIcon.vue';
 import PaletteIcon from './icons/PaletteIcon.vue';
 import StackIcon from './icons/StackIcon.vue';
 
@@ -16,7 +17,7 @@ import StackIcon from './icons/StackIcon.vue';
 					Rome wasn't built in a day, and neither was San Andreas Online.
 					We greatly appreciate the contributions of the SAMP/open.mp community, and we
 					decided to show gratitude by sharing some of the work that shaped the SAO project.
-					You can checkout the full list of contributors on our <a href="https://github.com/orgs/San-Andreas-Online/repositories" target="_blank" rel="noopener">GitHub page<ExternalLinkIcon/></a>.
+					You can checkout the full list of contributors on our <a href="https://github.com/orgs/San-Andreas-Online/repositories" target="_blank" rel="noopener"><GitHubIcon/>GitHub page<ExternalLinkIcon/></a>.
 				</p>
 		</div>
 		<div class="textdraw-editor">
@@ -40,7 +41,7 @@ import StackIcon from './icons/StackIcon.vue';
 					</li>
 				</ul>
 				<p>Try it out ! <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>Web TextDraw Editor</span><ExternalLinkIcon/></Button></a></p>
-				<p class="source">Source code available on <a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener">GitHub<ExternalLinkIcon/></a>.</p>
+				<p class="source">Source code available on <a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener"><GitHubIcon/>GitHub<ExternalLinkIcon/></a>.</p>
 			</article>
 		</div>
 	</div>
