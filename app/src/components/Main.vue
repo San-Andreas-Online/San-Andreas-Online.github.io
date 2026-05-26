@@ -38,6 +38,7 @@
 				<h2 class="info-item__label">{{ item.label }}</h2>
 				<p class="info-item__value">{{ item.value }}</p>
 			</div>
+			<p class="donate">Want to support the project? You can donate via <a href="https://paypal.me/MichaelAceAnderson" target="_blank" rel="noopener">PayPal<ExternalLinkIcon /></a> or support us on <a href="https://www.patreon.com/posts/san-andreas-open-153811828" target="_blank" rel="noopener">Patreon<ExternalLinkIcon /></a>.</p>
 		</div>
 	</div>
 </template>
@@ -90,5 +91,10 @@
 				color: var(--color-text);
 			}
 		}
+	}
+
+	.donate{
+		margin-top: 2rem;
+		color: #fff;
 	}
 </style>
