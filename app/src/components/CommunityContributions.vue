@@ -112,7 +112,7 @@ import StackIcon from './icons/StackIcon.vue';
 			color: var(--color-text);
 			padding: 1rem 3rem;
 			margin-top: 1rem;
-			text-align: justify;
+			text-align: left;
 
 			li {
 				list-style: none;
