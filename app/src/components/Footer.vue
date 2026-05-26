@@ -1,13 +1,5 @@
 <script setup>
-	import GitHubIcon from './icons/GitHubIcon.vue';
-	import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
-
 	const year = new Date().getFullYear()
-
-	const links = [
-		{ icon: GitHubIcon, label: 'GitHub', href: 'https://github.com/San-Andreas-Online' },
-		{ icon: ExternalLinkIcon, label: 'TextDraw Editor', href: '#' },
-	]
 </script>
 
 <template>
