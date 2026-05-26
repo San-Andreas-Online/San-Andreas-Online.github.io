@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Button from './Button.vue';
 import CodeIcon from './icons/CodeIcon.vue';
 import CursorIcon from './icons/CursorIcon.vue';
 import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
@@ -38,7 +39,8 @@ import StackIcon from './icons/StackIcon.vue';
 						<span class="icon"><CodeIcon/></span> Export ready-to-paste PAWN code
 					</li>
 				</ul>
-				<p>Try it out ! <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener">web-textdraw-editor<ExternalLinkIcon/></a></p>
+				<p>Try it out ! <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>Web TextDraw Editor</span><ExternalLinkIcon/></Button></a></p>
+				<p class="source">Source code available on <a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener">GitHub<ExternalLinkIcon/></a>.</p>
 			</article>
 		</div>
 	</div>
@@ -127,6 +129,11 @@ import StackIcon from './icons/StackIcon.vue';
 						vertical-align: middle;
 					}
 				}
+			}
+
+			.source{
+				margin-top: 2rem;
+				font-size: 0.9rem;
 			}
 		}
 	}
