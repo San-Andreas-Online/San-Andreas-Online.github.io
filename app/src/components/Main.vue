@@ -53,7 +53,6 @@
 
 	.row-centered {
 		text-align: center;
-		margin-bottom: 3rem;
 
 		> * {
 			display: inline-block;
@@ -63,9 +62,11 @@
 	}
 
 	.buttons {
+		margin-bottom: 3rem;
+		
 		a {
 			text-decoration: none;
-			font-size: 2em;
+			font-size: 2rem;
 		}
 	}
 
@@ -74,7 +75,7 @@
 			display: inline-block;
 			text-align: center;
 			margin: 0 1.5rem;
-			width: 8em;
+			width: 8rem;
     		vertical-align: top;
 
 			&__label {

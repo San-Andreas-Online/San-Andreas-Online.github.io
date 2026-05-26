@@ -33,7 +33,7 @@
 		font-weight: 100;
 		color: var(--color-text);
 		margin: 0 auto 1rem auto;
-		max-width: 40em;
+		max-width: 40rem;
 		$shadow-offset: 2px;
 		text-shadow: 0px 0px 2px #000;
 	}

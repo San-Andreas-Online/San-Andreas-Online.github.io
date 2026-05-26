@@ -36,8 +36,8 @@
 			font-family: 'Bank Gothic', sans-serif;
 
 			img {
-				height: 3em;
-				margin-right: 0.5em;
+				height: 3rem;
+				margin-right: 0.5rem;
 			}
 
 			img,
