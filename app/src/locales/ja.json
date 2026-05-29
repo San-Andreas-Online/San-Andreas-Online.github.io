@@ -1,0 +1,41 @@
+{
+    "connect": "今すぐ接続",
+    "get_open_mp_launcher": "open.mp ランチャーを入手",
+    "donate": "プロジェクトを支援したいですか？ {0} で寄付するか、{1} で支援できます。",
+    "community": {
+        "title": "コミュニティの貢献 ↓",
+        "intro": "ローマは一日にして成らず。San Andreas Online も同じです。私たちは SAMP/open.mp コミュニティの貢献に深く感謝しており、SAO プロジェクトを形作った作品の一部を共有することでその感謝を示したいと考えました。貢献者の一覧は私たちの {0} で確認できます。",
+        "githubPage": "GitHub ページ",
+        "github": "GitHub",
+        "webEditor": {
+            "title": "Web TextDraw エディター",
+            "features": {
+                "dragAndDrop": "ドラッグ＆ドロップによる要素配置",
+                "multiLayer": "複数レイヤーの要素管理",
+                "livePreview": "色とフォントのライブプレビュー",
+                "exportCode": "すぐに貼り付けられる PAWN コードを書き出し"
+            },
+            "try": "試してみてください！",
+            "tryButton": "Web TextDraw エディター",
+            "source": "ソースコードは {0} で公開しています。"
+        }
+    },
+    "server": {
+        "ip": {
+            "label": "IP",
+            "value": "まだ利用できません！"
+        },
+        "port": {
+            "label": "ポート",
+            "value": 7777
+        },
+        "mode": {
+            "label": "モード",
+            "value": "Freeroam"
+        },
+        "version": {
+            "label": "バージョン",
+            "value": "0.3.DL（0.3.7 互換）"
+        }
+    }
+}

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import Button from './Button.vue';
 import CodeIcon from './icons/CodeIcon.vue';
 import CursorIcon from './icons/CursorIcon.vue';
@@ -6,51 +6,52 @@ import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
 import GitHubIcon from './icons/GitHubIcon.vue';
 import PaletteIcon from './icons/PaletteIcon.vue';
 import StackIcon from './icons/StackIcon.vue';
+import { useI18n } from 'vue-i18n';
 
+const { t } = useI18n();
 </script>
 
 <template>
 	<div class="content">
 		<div class="intro">
-				<h2>Community Contributions ↓</h2>
-				<p>
-					Rome wasn't built in a day, and neither was San Andreas Online.
-					We greatly appreciate the contributions of the SAMP/open.mp community, and we
-					decided to show gratitude by sharing some of the work that shaped the SAO project.
-					You can checkout the full list of contributors on our <a href="https://github.com/orgs/San-Andreas-Online/repositories" target="_blank" rel="noopener"><GitHubIcon/>GitHub page<ExternalLinkIcon/></a>.
-				</p>
+			<h2>{{ $t('community.title') }}</h2>
+			<i18n-t keypath="community.intro" tag="p">
+				<a href="https://github.com/orgs/San-Andreas-Online/repositories" target="_blank" rel="noopener"><GitHubIcon/>{{ t('community.githubPage') }}<ExternalLinkIcon/></a>
+			</i18n-t>
 		</div>
 		<div class="textdraw-editor">
-			<h3>Web TextDraw Editor</h3>
+			<h3>{{ $t('community.webEditor.title') }}</h3>
 			<div class="textdraw-editor__demo">
 				<img src="https://github.com/San-Andreas-Online/web-textdraw-editor/blob/main/_docs/canvas.gif?raw=true" alt="Web TextDraw Editor" class="community-contributions" />
 			</div>
 			<article class="textdraw-editor__description">
 				<ul>
 					<li>
-						<span class="icon"><CursorIcon/></span> Drag & drop element placement
+						<span class="icon"><CursorIcon/></span> <span>{{ $t('community.webEditor.features.dragAndDrop') }}</span>
 					</li>
 					<li>
-						<span class="icon"><StackIcon/></span> Multi-layer element management
+						<span class="icon"><StackIcon/></span> <span>{{ $t('community.webEditor.features.multiLayer') }}</span>
 					</li>
 					<li>
-						<span class="icon"><PaletteIcon/></span> Live color & font preview
+						<span class="icon"><PaletteIcon/></span> <span>{{ $t('community.webEditor.features.livePreview') }}</span>
 					</li>
 					<li>
-						<span class="icon"><CodeIcon/></span> Export ready-to-paste PAWN code
+						<span class="icon"><CodeIcon/></span> <span>{{ $t('community.webEditor.features.exportCode') }}</span>
 					</li>
 				</ul>
-				<p>Try it out ! <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>Web TextDraw Editor</span><ExternalLinkIcon/></Button></a></p>
-				<p class="source">Source code available on <a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener"><GitHubIcon/>GitHub<ExternalLinkIcon/></a>.</p>
+				<p>{{ $t('community.webEditor.try') }} <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>{{ $t('community.webEditor.tryButton') }}</span><ExternalLinkIcon/></Button></a></p>
+				<i18n-t keypath="community.webEditor.source" tag="p" class="source">
+					<a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener">{{ t('community.github') }}<ExternalLinkIcon/></a>
+				</i18n-t>
 			</article>
 		</div>
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 	h2, h3 {
 		color: var(--color-primary-text);
-		font-family: 'Beckett', sans-serif;
+		font-family: 'Beckett', 'Times New Roman', serif;
 		font-weight: 100;
 
 		$shadow-offset: 2px;
@@ -71,7 +72,7 @@ import StackIcon from './icons/StackIcon.vue';
 
 	.intro {
 		h2 {
-			font-family: 'Beckett', sans-serif;
+			font-family: 'Beckett', 'Times New Roman', serif;
 			font-size: 3rem;
 			margin-bottom: 1rem;
 		}

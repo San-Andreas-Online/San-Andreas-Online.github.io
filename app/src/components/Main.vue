@@ -1,22 +1,28 @@
 <script setup>
+	import { onMounted, computed } from 'vue'
 	import Button from './Button.vue';
 	import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
 	import SplashText from './SplashText.vue';
 	import Title from './Title.vue';
-
-	const serverInfo = {
-		ip: { label: 'IP', value: "Not available yet !" },
-		port: { label: 'Port', value: 7777 },
-		mode: { label: 'Mode', value: "Freeroam" },
-		version: { label: 'Version', value: "0.3.DL (compatible with 0.3.7)" },
-	}
+	import { setLocale } from '../services/i18n'
+	import { useI18n } from 'vue-i18n'
 
 	function IsValidIp(ip, port) {
 		return typeof ip === 'string' && ip.trim().length > 0 && /^(\d{1,3}\.){3}\d{1,3}$/.test(ip)
 			&& typeof port !== 'undefined' && /^\d+$/.test(String(port));
 	}
 
-	const connectUrl = IsValidIp(serverInfo.ip.value, serverInfo.port.value) ? `samp://${serverInfo.ip.value}:${serverInfo.port.value}` : '#'
+	const userNavigatorLocale = (navigator.language || 'en').split('-')[0]
+	onMounted(() => setLocale(userNavigatorLocale))
+
+	const { t } = useI18n();
+
+	const serverInfo = ['ip','port','mode','version']
+	const connectUrl = IsValidIp(
+		t(`server.ip.value`),
+		t(`server.port.value`)
+	) ? `samp://${t(`server.ip.value`)}:${t(`server.port.value`)}` : '#'
+	
 </script>
 
 <template>
@@ -26,24 +32,26 @@
 
 		<div class="row-centered buttons">
 			<a :href="connectUrl">
-				<Button type="primary"><span>Connect Now</span></Button>
-			</a>
+				<Button type="primary"><span>{{ $t('connect') }}</span></Button>			</a>
 			<a href="https://open.mp/downloads/launcher" target="_blank" rel="noopener">
-				<Button type="secondary"><ExternalLinkIcon /><span> Get open.mp launcher</span></Button>
+				<Button type="secondary"><ExternalLinkIcon /><span>{{ $t('get_open_mp_launcher') }}</span></Button>
 			</a>
 		</div>
 
 		<div class="row-centered">
-			<div v-for="item in serverInfo" :key="item.label" class="info-item">
-				<h2 class="info-item__label">{{ item.label }}</h2>
-				<p class="info-item__value">{{ item.value }}</p>
+			<div v-for="key in serverInfo" :key="key" class="info-item" v-if="$te(`server.${key}.value`)">
+				<h2 class="info-item__label">{{ $t(`server.${key}.label`) }}</h2>
+				<p class="info-item__value">{{ $t(`server.${key}.value`) }}</p>
 			</div>
-			<p class="donate">Want to support the project? You can donate via <a href="https://paypal.me/MichaelAceAnderson" target="_blank" rel="noopener">PayPal<ExternalLinkIcon /></a> or support us on <a href="https://www.patreon.com/posts/san-andreas-open-153811828" target="_blank" rel="noopener">Patreon<ExternalLinkIcon /></a>.</p>
+			<i18n-t keypath="donate" tag="p" class="donate">
+				<a href="https://paypal.me/MichaelAceAnderson" target="_blank" rel="noopener">PayPal</a>
+				<a href="https://www.patreon.com/posts/san-andreas-open-153811828" target="_blank" rel="noopener">Patreon</a>
+			</i18n-t>
 		</div>
 	</div>
 </template>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
 	.content {
 		position: relative;
 		text-align: center;

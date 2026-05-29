@@ -1,0 +1,42 @@
+{
+	"connect": "Se connecter",
+	"get_open_mp_launcher": "Obtenir le launcher open.mp",
+	"donate": "Voulez-vous soutenir le projet ? Vous pouvez faire un don via {0} ou nous soutenir sur {1}.",
+	"community": {
+		"title": "Contributions de la communauté ↓",
+		"intro": "Rome ne s'est pas construite en un jour, et San Andreas Online non plus. Nous apprécions grandement les contributions de la communauté SAMP/open.mp, et nous avons décidé de montrer notre gratitude en partageant une partie du travail qui a façonné le projet SAO. Vous pouvez consulter la liste complète des contributeurs sur notre {0}.",
+		"githubPage": "page GitHub",
+		"github": "GitHub",
+		"webEditor": {
+			"title": "Éditeur Web TextDraw",
+			"features": {
+				"dragAndDrop": "Glisser-déposer pour placer les éléments",
+				"multiLayer": "Gestion des éléments multi-couches",
+				"livePreview": "Aperçu en direct des couleurs et des polices",
+				"exportCode": "Export du code PAWN prêt à coller"
+			},
+			"try": "Essayez-le !",
+			"tryButton": "Éditeur Web TextDraw",
+			"source": "Code source disponible sur {0}."
+		}
+	},
+	"server": {
+		"ip": {
+			"label": "IP",
+			"value": "Not available yet!"
+		},
+		"port": {
+			"label": "Port",
+			"value": 7777
+		},
+		"mode": {
+			"label": "Mode",
+			"value": "Freeroam",
+			"valueKey": "modes.freeroam"
+		},
+		"version": {
+			"label": "Version",
+			"value": "0.3.DL (compatible with 0.3.7)"
+		}
+	}
+}
