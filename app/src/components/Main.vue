@@ -4,8 +4,9 @@
 	import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
 	import SplashText from './SplashText.vue';
 	import Title from './Title.vue';
-	import { setLocale } from '../services/i18n'
+	import { setLocale, localeDefinitions } from '../services/i18n'
 	import { useI18n } from 'vue-i18n'
+	import Select from './Select.vue'
 
 	function IsValidIp(ip, port) {
 		return typeof ip === 'string' && ip.trim().length > 0 && /^(\d{1,3}\.){3}\d{1,3}$/.test(ip)
@@ -17,16 +18,24 @@
 
 	const { t } = useI18n();
 
-	const serverInfo = ['ip','port','mode','version']
-	const connectUrl = IsValidIp(
-		t(`server.ip.value`),
-		t(`server.port.value`)
-	) ? `samp://${t(`server.ip.value`)}:${t(`server.port.value`)}` : '#'
-	
+	const availableLocales = Object.entries(localeDefinitions).map(([key, def]) => ({
+		key: key,
+		label: def.label
+	}))
+
+	const selectedLocale = computed({
+		get: () => locale.value,
+		set: (value) => {
+			setLocale(value)
+		}
+	})
 </script>
 
 <template>
 	<div class="content">
+		<Select v-model="selectedLocale" class="language-selector" type="secondary">
+			<option v-for="locale in availableLocales" :key="locale.key" :value="locale.key">{{ locale.label }}</option>
+		</Select>
 		<Title />
 		<SplashText />
 
@@ -52,6 +61,13 @@
 </template>
 
 <style scoped lang="scss">
+
+	.language-selector {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+	}
+
 	.content {
 		position: relative;
 		text-align: center;

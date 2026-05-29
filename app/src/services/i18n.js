@@ -1,16 +1,34 @@
 import { createI18n } from 'vue-i18n'
 
+export const localeDefinitions = {
+  en: {
+    label: 'English',
+    load: () => import('../locales/en.json')
+  },
+  fr: {
+    label: 'Français',
+    load: () => import('../locales/fr.json')
+  },
+  pt: {
+    label: 'Português',
+    load: () => import('../locales/pt.json')
+  },
+  ja: {
+    label: '日本語',
+    load: () => import('../locales/ja.json')
+  },
+  es: {
+    label: 'Español',
+    load: () => import('../locales/es.json')
+  },
+  it: {
+    label: 'Italiano',
+    load: () => import('../locales/it.json')
+  }
+}
+
 const defaultLocale = ((navigator.language || 'en').split('-')[0]) || 'en'
 const fallbackLocale = 'en'
-
-const localeLoaders = {
-  en: () => import('../locales/en.json'),
-  fr: () => import('../locales/fr.json'),
-  pt: () => import('../locales/pt.json'),
-  ja: () => import('../locales/ja.json'),
-  es: () => import('../locales/es.json'),
-  it: () => import('../locales/it.json')
-}
 
 const i18n = createI18n({
   legacy: false,
@@ -25,7 +43,7 @@ async function loadLocaleMessages(locale) {
     return true
   }
 
-  const loader = localeLoaders[locale]
+  const loader = localeDefinitions[locale]?.load
   if (!loader) {
     return false
   }
@@ -36,17 +54,15 @@ async function loadLocaleMessages(locale) {
 }
 
 export async function setLocale(locale) {
-  const targetLocale = Object.prototype.hasOwnProperty.call(localeLoaders, locale)
-    ? locale
-    : fallbackLocale
-
+  const targetLocale = localeDefinitions[locale] ? locale : fallbackLocale
   const loaded = await loadLocaleMessages(targetLocale)
+
   if (!loaded) {
     console.warn(`Locale ${locale} not available.`)
     return
   }
 
-  if (i18n.global.locale && typeof i18n.global.locale === 'object') {
+  if (typeof i18n.global.locale === 'object') {
     i18n.global.locale.value = targetLocale
   } else {
     i18n.global.locale = targetLocale
