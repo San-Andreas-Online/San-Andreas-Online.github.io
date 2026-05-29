@@ -14,7 +14,6 @@
 <template>
 	<select :class="['select', props.type]" v-model="modelValue">
 		<slot />
-		<slot />
 	</select>
 </template>
 
