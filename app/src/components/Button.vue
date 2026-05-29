@@ -18,7 +18,7 @@
 <style scoped lang="scss">
 	.btn {
 		display: inline-block;
-		padding: 0.75rem 2rem;
+		padding: 1rem 2rem;
 		border-radius: 4px;
 		font-size: inherit;
 		font-family: 'Bank Gothic', sans-serif;
