@@ -27,7 +27,7 @@
 		},
 		"port": {
 			"label": "Port",
-			"value": 7777
+			"value": "7777"
 		},
 		"mode": {
 			"label": "Mode",
