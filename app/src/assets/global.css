@@ -4,6 +4,8 @@
 	--color-primary-text: rgb(255, 255, 255);
 	--color-secondary: rgb(255, 255, 255);
 	--color-secondary-text: rgb(0, 0, 0);
+	--color-input: rgba(45, 45, 45, 0.8);
+	--color-input-border: rgba(255, 255, 255, 0.1);
 	--color-text: rgb(136, 136, 136);
 	--color-background: rgb(0, 0, 0);
 }

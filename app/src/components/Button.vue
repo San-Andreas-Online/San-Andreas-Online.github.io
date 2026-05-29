@@ -47,9 +47,9 @@
 		}
 
 		&.secondary {
-			background: rgba(45, 45, 45, 0.8);
+			background: var(--color-input);
 			color: #fff;
-			border-color: rgba(255, 255, 255, 0.1);
+			border-color: var(--color-input-border);
 
 			&:hover {
 				filter: brightness(1.25);
