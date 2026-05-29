@@ -1,9 +1,9 @@
 <script setup>
 	import { onMounted, computed } from 'vue'
-	import Button from './Button.vue';
-	import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
-	import SplashText from './SplashText.vue';
-	import Title from './Title.vue';
+	import Button from './Button.vue'
+	import ExternalLinkIcon from './icons/ExternalLinkIcon.vue'
+	import SplashText from './SplashText.vue'
+	import Title from './Title.vue'
 	import { setLocale, localeDefinitions } from '../services/i18n'
 	import { useI18n } from 'vue-i18n'
 	import Select from './Select.vue'
@@ -49,9 +49,11 @@
 
 		<div class="row-centered buttons">
 			<a :href="connectUrl">
-				<Button type="primary"><span>{{ $t('connect') }}</span></Button>			</a>
+				<Button type="primary"><span>{{ $t('connect') }}</span></Button> </a>
 			<a href="https://open.mp/downloads/launcher" target="_blank" rel="noopener">
-				<Button type="secondary"><ExternalLinkIcon /><span>{{ $t('get_open_mp_launcher') }}</span></Button>
+				<Button type="secondary">
+					<ExternalLinkIcon /><span>{{ $t('get_open_mp_launcher') }}</span>
+				</Button>
 			</a>
 		</div>
 
@@ -62,7 +64,8 @@
 			</div>
 			<i18n-t keypath="donate" tag="p" class="donate">
 				<a href="https://paypal.me/MichaelAceAnderson" target="_blank" rel="noopener">PayPal</a>
-				<a href="https://www.patreon.com/posts/san-andreas-open-153811828" target="_blank" rel="noopener">Patreon</a>
+				<a href="https://www.patreon.com/posts/san-andreas-open-153811828" target="_blank"
+					rel="noopener">Patreon</a>
 			</i18n-t>
 		</div>
 	</div>
@@ -87,7 +90,7 @@
 	.row-centered {
 		text-align: center;
 
-		> * {
+		>* {
 			display: inline-block;
 			vertical-align: middle;
 			margin: 0.5rem;
@@ -96,7 +99,7 @@
 
 	.buttons {
 		margin-bottom: 3rem;
-		
+
 		a {
 			text-decoration: none;
 			font-size: 2rem;
@@ -109,7 +112,7 @@
 			text-align: center;
 			margin: 0 1.5rem;
 			width: 8rem;
-    		vertical-align: top;
+			vertical-align: top;
 
 			&__label {
 				display: block;
@@ -125,7 +128,7 @@
 		}
 	}
 
-	.donate{
+	.donate {
 		margin-top: 2rem;
 		color: #fff;
 	}

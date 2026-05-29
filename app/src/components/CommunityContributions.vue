@@ -1,14 +1,14 @@
 <script setup>
-import Button from './Button.vue';
-import CodeIcon from './icons/CodeIcon.vue';
-import CursorIcon from './icons/CursorIcon.vue';
-import ExternalLinkIcon from './icons/ExternalLinkIcon.vue';
-import GitHubIcon from './icons/GitHubIcon.vue';
-import PaletteIcon from './icons/PaletteIcon.vue';
-import StackIcon from './icons/StackIcon.vue';
-import { useI18n } from 'vue-i18n';
+	import Button from './Button.vue'
+	import CodeIcon from './icons/CodeIcon.vue'
+	import CursorIcon from './icons/CursorIcon.vue'
+	import ExternalLinkIcon from './icons/ExternalLinkIcon.vue'
+	import GitHubIcon from './icons/GitHubIcon.vue'
+	import PaletteIcon from './icons/PaletteIcon.vue'
+	import StackIcon from './icons/StackIcon.vue'
+	import { useI18n } from 'vue-i18n'
 
-const { t } = useI18n();
+	const { t } = useI18n();
 </script>
 
 <template>
@@ -16,32 +16,51 @@ const { t } = useI18n();
 		<div class="intro">
 			<h2>{{ $t('community.title') }}</h2>
 			<i18n-t keypath="community.intro" tag="p">
-				<a href="https://github.com/orgs/San-Andreas-Online/repositories" target="_blank" rel="noopener"><GitHubIcon/>{{ t('community.githubPage') }}<ExternalLinkIcon/></a>
+				<a href="https://github.com/orgs/San-Andreas-Online/repositories" target="_blank" rel="noopener">
+					<GitHubIcon />{{ t('community.githubPage') }}
+					<ExternalLinkIcon />
+				</a>
 			</i18n-t>
 		</div>
 		<div class="textdraw-editor">
 			<h3>{{ $t('community.webEditor.title') }}</h3>
 			<div class="textdraw-editor__demo">
-				<img src="https://github.com/San-Andreas-Online/web-textdraw-editor/blob/main/_docs/canvas.gif?raw=true" alt="Web TextDraw Editor" class="community-contributions" />
+				<img src="https://github.com/San-Andreas-Online/web-textdraw-editor/blob/main/_docs/canvas.gif?raw=true"
+					alt="Web TextDraw Editor" class="community-contributions" />
 			</div>
 			<article class="textdraw-editor__description">
 				<ul>
 					<li>
-						<span class="icon"><CursorIcon/></span> <span>{{ $t('community.webEditor.features.dragAndDrop') }}</span>
+						<span class="icon">
+							<CursorIcon />
+						</span> <span>{{ $t('community.webEditor.features.dragAndDrop') }}</span>
 					</li>
 					<li>
-						<span class="icon"><StackIcon/></span> <span>{{ $t('community.webEditor.features.multiLayer') }}</span>
+						<span class="icon">
+							<StackIcon />
+						</span> <span>{{ $t('community.webEditor.features.multiLayer') }}</span>
 					</li>
 					<li>
-						<span class="icon"><PaletteIcon/></span> <span>{{ $t('community.webEditor.features.livePreview') }}</span>
+						<span class="icon">
+							<PaletteIcon />
+						</span> <span>{{ $t('community.webEditor.features.livePreview') }}</span>
 					</li>
 					<li>
-						<span class="icon"><CodeIcon/></span> <span>{{ $t('community.webEditor.features.exportCode') }}</span>
+						<span class="icon">
+							<CodeIcon />
+						</span> <span>{{ $t('community.webEditor.features.exportCode') }}</span>
 					</li>
 				</ul>
-				<p class="try-it">{{ $t('community.webEditor.try') }}</p> <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>{{ $t('community.webEditor.tryButton') }}</span><ExternalLinkIcon/></Button></a>
+				<p class="try-it">{{ $t('community.webEditor.try') }}</p> <a
+					href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank"
+					rel="noopener"><Button type="primary"><span>{{ $t('community.webEditor.tryButton') }}</span>
+						<ExternalLinkIcon />
+					</Button></a>
 				<i18n-t keypath="community.webEditor.source" tag="p" class="source">
-					<a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener">{{ t('community.github') }}<ExternalLinkIcon/></a>
+					<a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank"
+						rel="noopener">{{ t('community.github') }}
+						<ExternalLinkIcon />
+					</a>
 				</i18n-t>
 			</article>
 		</div>
@@ -49,7 +68,9 @@ const { t } = useI18n();
 </template>
 
 <style scoped lang="scss">
-	h2, h3 {
+
+	h2,
+	h3 {
 		color: var(--color-primary-text);
 		font-family: 'Beckett', 'Times New Roman', serif;
 		font-weight: 100;
@@ -77,7 +98,7 @@ const { t } = useI18n();
 			margin-bottom: 1rem;
 		}
 
-		p{
+		p {
 			font-family: 'Bank Gothic', sans-serif;
 			text-align: justify;
 		}
@@ -91,7 +112,8 @@ const { t } = useI18n();
 			margin-bottom: 1rem;
 		}
 
-		&__demo, &__description {
+		&__demo,
+		&__description {
 			display: inline-block;
 			vertical-align: middle;
 			min-width: 45%;
@@ -127,7 +149,7 @@ const { t } = useI18n();
 					border-radius: 4px;
 					vertical-align: middle;
 
-					> * {
+					>* {
 						vertical-align: middle;
 					}
 				}
@@ -138,7 +160,7 @@ const { t } = useI18n();
 				margin-right: 2rem;
 			}
 
-			.source{
+			.source {
 				margin-top: 2rem;
 				font-size: 0.9rem;
 			}

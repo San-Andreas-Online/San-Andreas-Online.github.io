@@ -26,7 +26,7 @@
 		transition: filter 0.2s, transform 0.1s;
 		border: 1px solid transparent;
 
-		> * {
+		>* {
 			vertical-align: middle;
 		}
 
@@ -54,10 +54,11 @@
 			&:hover {
 				filter: brightness(1.25);
 			}
-			
+
 		}
 
-		&.primary, &.secondary{
+		&.primary,
+		&.secondary {
 			&:active {
 				transform: scale(0.95);
 				filter: brightness(0.75);
