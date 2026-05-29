@@ -16,7 +16,7 @@
 	const userNavigatorLocale = (navigator.language || 'en').split('-')[0]
 	onMounted(() => setLocale(userNavigatorLocale))
 
-	const { t } = useI18n();
+	const { t, te, locale } = useI18n()
 
 	const availableLocales = Object.entries(localeDefinitions).map(([key, def]) => ({
 		key: key,
@@ -28,6 +28,14 @@
 		set: (value) => {
 			setLocale(value)
 		}
+	})
+
+	const serverInfo = ['ip', 'port', 'mode', 'version']
+	const connectUrl = computed(() => {
+		if (!te('server.ip.value') || !te('server.port.value')) return '#'
+		const ip = String(t('server.ip.value'))
+		const port = String(t('server.port.value'))
+		return IsValidIp(ip, port) ? `samp://${ip}:${port}` : '#'
 	})
 </script>
 
@@ -48,7 +56,7 @@
 		</div>
 
 		<div class="row-centered">
-			<div v-for="key in serverInfo" :key="key" class="info-item" v-if="$te(`server.${key}.value`)">
+			<div v-for="key in serverInfo" :key="key" class="info-item">
 				<h2 class="info-item__label">{{ $t(`server.${key}.label`) }}</h2>
 				<p class="info-item__value">{{ $t(`server.${key}.value`) }}</p>
 			</div>
