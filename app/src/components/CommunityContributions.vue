@@ -39,7 +39,7 @@ const { t } = useI18n();
 						<span class="icon"><CodeIcon/></span> <span>{{ $t('community.webEditor.features.exportCode') }}</span>
 					</li>
 				</ul>
-				<p>{{ $t('community.webEditor.try') }} <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>{{ $t('community.webEditor.tryButton') }}</span><ExternalLinkIcon/></Button></a></p>
+				<p class="try-it">{{ $t('community.webEditor.try') }}</p> <a href="https://san-andreas-online.github.io/web-textdraw-editor/" target="_blank" rel="noopener"><Button type="primary"><span>{{ $t('community.webEditor.tryButton') }}</span><ExternalLinkIcon/></Button></a>
 				<i18n-t keypath="community.webEditor.source" tag="p" class="source">
 					<a href="https://github.com/San-Andreas-Online/web-textdraw-editor" target="_blank" rel="noopener">{{ t('community.github') }}<ExternalLinkIcon/></a>
 				</i18n-t>
@@ -131,6 +131,11 @@ const { t } = useI18n();
 						vertical-align: middle;
 					}
 				}
+			}
+
+			.try-it {
+				display: inline-block;
+				margin-right: 2rem;
 			}
 
 			.source{
